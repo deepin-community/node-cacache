@@ -1,0 +1,4 @@
+# Same author
+add-component-copyright infer-owner *
+# Doc
+very-long-line-length-in-source-file *.md*
