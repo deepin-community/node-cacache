@@ -12,7 +12,7 @@ Build-Depends: debhelper-compat (= 13)
  , node-glob <!nocheck>
  , node-graceful-fs <!nocheck>
  , node-lru-cache (>= 7) <!nocheck>
- , node-minipass <!nocheck>
+ , node-minipass (>> 3.3.6+~cs9.4.19-3~) <!nocheck>
  , node-mississippi <!nocheck>
  , node-mkdirp (>= 1.0.3) <!nocheck>
  , node-move-concurrently <!nocheck>
@@ -25,7 +25,7 @@ Build-Depends: debhelper-compat (= 13)
  , node-tap (>= 15) <!nocheck>
  , node-unique-filename <!nocheck>
  , node-y18n <!nocheck>
-Standards-Version: 4.6.1
+Standards-Version: 4.7.0
 Vcs-Browser: https://salsa.debian.org/js-team/node-cacache
 Vcs-Git: https://salsa.debian.org/js-team/node-cacache.git
 Homepage: https://github.com/npm/cacache#readme
@@ -38,7 +38,7 @@ Depends: ${misc:Depends}
  , node-glob
  , node-graceful-fs
  , node-lru-cache (>= 7)
- , node-minipass
+ , node-minipass (>> 3.3.6+~cs9.4.19-3~)
  , node-mkdirp (>= 1.0.3)
  , node-move-concurrently
  , node-p-map (>= 3.0.0)
