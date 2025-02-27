@@ -1,0 +1,76 @@
+From: =?utf-8?q?Bastien_Roucari=C3=A8s?= <rouca@debian.org>
+Date: Sun, 11 Aug 2024 16:17:24 +0000
+Subject: Port to newer minipass
+
+forwarded: not-needed
+---
+ fs-minipass/index.js  | 2 +-
+ lib/content/write.js  | 2 +-
+ lib/entry-index.js    | 2 +-
+ lib/get.js            | 2 +-
+ test/content/write.js | 2 +-
+ 5 files changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/fs-minipass/index.js b/fs-minipass/index.js
+index 9b0779c..e84bb03 100644
+--- a/fs-minipass/index.js
++++ b/fs-minipass/index.js
+@@ -1,5 +1,5 @@
+ 'use strict'
+-const MiniPass = require('minipass')
++const {Minipass: MiniPass} = require('minipass')
+ const EE = require('events').EventEmitter
+ const fs = require('fs')
+ 
+diff --git a/lib/content/write.js b/lib/content/write.js
+index d799ae8..0c28ba4 100644
+--- a/lib/content/write.js
++++ b/lib/content/write.js
+@@ -5,7 +5,7 @@ const events = require('events')
+ const contentPath = require('./path')
+ const fs = require('fs/promises')
+ const moveFile = require('../util/move-file')
+-const Minipass = require('minipass')
++const {Minipass} = require('minipass')
+ const Pipeline = require('minipass-pipeline')
+ const Flush = require('minipass-flush')
+ const path = require('path')
+diff --git a/lib/entry-index.js b/lib/entry-index.js
+index add15e3..83b042a 100644
+--- a/lib/entry-index.js
++++ b/lib/entry-index.js
+@@ -9,7 +9,7 @@ const {
+   rm,
+   writeFile,
+ } = require('fs/promises')
+-const Minipass = require('minipass')
++const { Minipass } = require('minipass')
+ const path = require('path')
+ const ssri = require('ssri')
+ const uniqueFilename = require('unique-filename')
+diff --git a/lib/get.js b/lib/get.js
+index 272ddb6..29ee7a4 100644
+--- a/lib/get.js
++++ b/lib/get.js
+@@ -1,7 +1,7 @@
+ 'use strict'
+ 
+ const Collect = require('minipass-collect')
+-const Minipass = require('minipass')
++const {Minipass} = require('minipass')
+ const Pipeline = require('minipass-pipeline')
+ 
+ const index = require('./entry-index')
+diff --git a/test/content/write.js b/test/content/write.js
+index e91050a..c915ac8 100644
+--- a/test/content/write.js
++++ b/test/content/write.js
+@@ -2,7 +2,7 @@
+ 
+ const events = require('events')
+ const fs = require('fs')
+-const Minipass = require('minipass')
++const {Minipass} = require('minipass')
+ const path = require('path')
+ const ssri = require('ssri')
+ const t = require('tap')
